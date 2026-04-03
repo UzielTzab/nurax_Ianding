@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from '@/hooks';
-import { NAVIGATION_LINKS, LINKS, LOGOS } from '@/lib/constants';
+import { LOGOS } from '@/lib/constants';
 /**
  * Footer Section
  * Brand info + links + copyright

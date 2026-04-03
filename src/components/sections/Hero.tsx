@@ -31,18 +31,6 @@ export const Hero = () => {
     },
   };
 
-  const floatingCardVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: (i: number) => ({
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delay: 0.5 + i * 0.1,
-        duration: 0.6,
-      },
-    }),
-  };
-
   return (
     <section ref={ref} className="relative min-h-[120vh] md:min-h-screen flex items-center pt-24 md:pt-32 pb-16 md:pb-20 overflow-hidden bg-gradient-to-b from-neutral-50 to-primary-50">
       {/* Brightness Overlay */}
