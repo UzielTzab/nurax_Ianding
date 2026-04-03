@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================
+   RESET & BASE STYLES
+======================== */
+
+* {
+  @apply border-neutral-200;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-neutral-50 text-neutral-900;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+  letter-spacing: -0.01em;
+}
+
+/* ========================
+   ANIMATIONS
+======================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes meshDrift {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30px, -30px);
+  }
+  50% {
+    transform: translate(-20px, 20px);
+  }
+  75% {
+    transform: translate(20px, 30px);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================
+   UTILITY CLASSES
+======================== */
+
+.container {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section {
+  @apply py-20 sm:py-28 lg:py-32;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary-700 to-primary-600 bg-clip-text text-transparent;
+}
+
+.glassmorphism {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+/* Focus visible para accesibilidad */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary-600;
+}
+
+/* Selection style */
+::selection {
+  @apply bg-primary-700 text-white;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-700 rounded-full hover:bg-primary-600;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    @apply !animate-none !transition-none;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    @apply bg-white;
+  }
+}
